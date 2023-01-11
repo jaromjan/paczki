@@ -26,12 +26,12 @@ puste_w_paczce = 0
 # Pobieramy dane o ilosci elementow
 zakres = int(input("Podaj ile elementów chcesz wysłać <int> (< 0): "))
 for x in range(zakres):
-# Pobieramy i sprawdzamy podane wagi w petli
+    # Pobieramy i sprawdzamy podane wagi w petli
     waga = int(input("Podaj wagę elementu <int> (1 - 10): "))
     while waga < 1 or waga > 10:
             print("Podaj liczbę całkowitą z zakresu 1 - 10")
             waga = 0
-            waga = int(input("Podaj wagę elementu: "))
+            waga = int(input("Podaj wagę elementu <int> (1 - 10): "))
 # Zliczamy wprowadzane wagi elementów
     waga_sum = waga_sum + waga
 # Przygotowujemy dane do wyswietlenia zebranych wartosci
@@ -44,8 +44,8 @@ for x in range(zakres):
     podsumowanie_all = str(podsumowanie_all) + separator + str(waga)
     suma_wyslane = suma_wyslane + waga
 # Przygotowujemy paczki
-    while waga_sum > 20 :
-# Wyliczamy wage paczki  po przekroczeniu 20kg
+    while waga_sum > 20:
+        # Wyliczamy wage paczki  po przekroczeniu 20kg
         waga_paczki = waga_sum - waga
 # Numerujemy paczki
         il_paczek += 1
@@ -53,7 +53,7 @@ for x in range(zakres):
         puste_w_paczce = 20 - waga_paczki
         suma_puste = suma_puste + puste_w_paczce
 # Przypisujemy element, ktory sie nie zmiescil dla kolejnej paczki
-        podsumowanie  = waga
+        podsumowanie = waga
         waga_sum = waga_sum - waga_paczki
 # Szukamy najbardziej pustej paczki
         if waga_maks_pusta < puste_w_paczce:
@@ -81,7 +81,8 @@ for x in range(zakres):
                 zawartosc_paczek = zawartosc_paczek + separator_zawartosci + str(podsumowanie)
             break
 # Wypisujemy podsumowanie
-komunikat = szablon.format(zakres, podsumowanie_all, il_paczek, zawartosc_paczek, suma_wyslane, suma_puste, nr_maks_pusta, waga_maks_pusta)
+komunikat = szablon.format(zakres, podsumowanie_all, il_paczek, zawartosc_paczek, suma_wyslane, suma_puste,
+                           nr_maks_pusta, waga_maks_pusta)
 if zakres == 0:
-    komunikat = "Podano błedną ilość elementów - podaj liczbę całkowitą większą od zera"
+    komunikat = "Podano błedną ilość elementów wymagana liczba całkowita większa od zera - koniec programu"
 print(komunikat)
