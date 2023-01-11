@@ -1,0 +1,5 @@
+/.idea/
+/venv/
+app.py
+in.txt
+main.py
