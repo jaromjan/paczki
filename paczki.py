@@ -1,7 +1,6 @@
 # Drugi program - ladowaczka paczek
-
 # Tworzymy szablon do wypisywania
-szablon = "Ilość elementów {}\n" \
+szablon = "\nIlość elementów {}\n" \
           "Wagi elementów: {}\n" \
           "\n" \
           "Podsumowanie:\n" \
@@ -10,7 +9,6 @@ szablon = "Ilość elementów {}\n" \
           "Razem wysłano {}kg\n" \
           "Suma pustych kilogramów {}kg\n" \
           "Najwięcej pustych kilogramów ma paczka {} ({}kg)\n"
-
 # Deklarujemy zmienne
 podsumowanie_all = ''
 il_paczek = 0
@@ -25,7 +23,6 @@ podsumowanie_old = ''
 separator = ''
 separator_zawartosci = ''
 puste_w_paczce = 0
-
 # Pobieramy dane o ilosci elementow
 zakres = int(input("Podaj ile elementów chcesz wysłać <int> (< 0): "))
 for x in range(zakres):
@@ -86,5 +83,5 @@ for x in range(zakres):
 # Wypisujemy podsumowanie
 komunikat = szablon.format(zakres, podsumowanie_all, il_paczek, zawartosc_paczek, suma_wyslane, suma_puste, nr_maks_pusta, waga_maks_pusta)
 if zakres == 0:
-    komunikat = "Podano błedną ilość elementów - podaj wartość całkowitą większą od zera"
+    komunikat = "Podano błedną ilość elementów - podaj liczbę całkowitą większą od zera"
 print(komunikat)
